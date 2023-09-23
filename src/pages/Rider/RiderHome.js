@@ -10,12 +10,13 @@ import {
     Icon,
     useColorMode,
     Divider,
+    Image,
 } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
-import { useAuth0 } from '@auth0/auth0-react'; // Import Auth0 hook
-import { FaMapMarker, FaBell } from 'react-icons/fa'; // Import map marker and bell icons
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'; // Import map components
-import 'leaflet/dist/leaflet.css'; // Import Leaflet CSS
+import { useAuth0 } from '@auth0/auth0-react';
+import { FaMapMarker, FaBell } from 'react-icons/fa';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
 
 function RiderHome() {
     const { user } = useAuth0();
@@ -28,12 +29,14 @@ function RiderHome() {
             bg={'gray.100'}
             padding={{ base: 4, md: 10 }}
         >
-            <Heading as="h1" size="xl" my={6} color="teal.500">
-                Welcome, {user ? user.name : 'Rider'}!
-            </Heading>
-
+            <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4}>
+                <Image src={user.picture} fallbackSrc='https://via.placeholder.com/150' />
+                <Heading as="h1" size="xl" my={6} color="teal.500">
+                    Welcome, {user ? user.name : 'Rider'}!
+                </Heading>
+            </SimpleGrid>
             <MapCard />
-
+            <Divider p={4} orientation='horizontal' />
             <Box maxW="xl" p={6} rounded="lg" shadow="lg" bg="white">
                 <Stack spacing={4} mb={6}>
                     <Text fontSize="lg">
@@ -66,7 +69,6 @@ function RiderHome() {
                         date="Oct 20, 2023"
                     />
                 </SimpleGrid>
-                <Divider orientation='horizontal' />
                 <SimpleGrid columns={{ base: 1, md: 2 }} mt={6} spacing={4}>
                     <Heading as="h2" size="lg" color="teal.500">
                         Rewards and Achievements
@@ -92,7 +94,7 @@ function RiderHome() {
                 </Button>
             </Link>
 
-            <Link to="/notifications" style={{ textDecoration: 'none' }}>
+            <Link to="/rider-notifications" style={{ textDecoration: 'none' }}>
                 <Button
                     mt={4}
                     variant="outline"
@@ -161,7 +163,7 @@ function RewardCard({ title, description }) {
             <Text fontSize="md" color="gray.500">
                 {description}
             </Text>
-            <Link to="/rewards">
+            <Link to="/rider-rewards">
                 <Button
                     colorScheme="teal"
                     size="sm"
@@ -181,13 +183,12 @@ function MapCard() {
             rounded="lg"
             shadow="lg"
             bg="white"
-            w="100%"
-            h="300px"
+            w="80%"
+            h="270px"
         >
             <MapContainer center={[51.505, -0.09]} zoom={13} style={{ height: '100%' }}>
                 <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 />
                 <Marker position={[51.505, -0.09]}>
                     <Popup>Your current location</Popup>
