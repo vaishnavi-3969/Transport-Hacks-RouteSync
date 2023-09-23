@@ -6,15 +6,11 @@ import {
     Heading,
     Text,
 } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 
 function Home() {
 
     return (
         <Box p={4}>
-            <Header />
             <Flex
                 p={10}
                 align="center"
@@ -40,7 +36,7 @@ function Home() {
                         size="lg"
                         width="100%"
                         as="a"
-                        href="rider"
+                        href="rider-home"
                     >
                         Log in as Rider
                     </Button>
@@ -50,7 +46,7 @@ function Home() {
                         size="lg"
                         width="100%"
                         as="a"
-                        href="driver"
+                        href="driver-home"
                         mt={4}
                     >
                         Log in as Driver
@@ -111,7 +107,6 @@ function Home() {
                     </Box>
                 </Box>
             </Flex>
-            <Footer />
         </Box>
     );
 }
