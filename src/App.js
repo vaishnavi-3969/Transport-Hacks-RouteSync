@@ -11,9 +11,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           {isAuthenticated ? (
-            <Route path="/" element={<Landing />} exact />
-          ) : (
             <Route path="/" element={<Home />} exact />
+          ) : (
+            <Route path="/" element={<Landing />} exact />
           )
           }
           <Route path="/about" element={<About/>} exact/>

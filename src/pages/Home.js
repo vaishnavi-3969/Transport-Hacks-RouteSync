@@ -14,7 +14,7 @@ function Home() {
 
     return (
         <Box p={4}>
-        <Header/>
+            <Header />
             <Flex
                 p={10}
                 align="center"
@@ -111,7 +111,7 @@ function Home() {
                     </Box>
                 </Box>
             </Flex>
-            <Footer/>
+            <Footer />
         </Box>
     );
 }
