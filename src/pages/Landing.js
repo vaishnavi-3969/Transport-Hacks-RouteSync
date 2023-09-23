@@ -14,10 +14,10 @@ import { useAuth0 } from '@auth0/auth0-react';
 
 function Landing() {
     const { colorMode } = useColorMode();
-    const { loginWithRedirect, loginWithPopup } = useAuth0();
+    const { loginWithRedirect } = useAuth0();
 
     const handleGetStarted = () => {
-        loginWithPopup();
+        loginWithRedirect();
     };
 
     return (
