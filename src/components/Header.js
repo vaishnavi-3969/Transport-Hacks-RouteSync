@@ -1,9 +1,36 @@
-import React from 'react'
+import React from 'react';
+import {
+  Box,
+  Flex,
+  Spacer,
+  Button,
+  useColorMode,
+} from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 
-const Header = () => {
+function Header() {
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
-    <div>Header</div>
-  )
+    <Box as="header" bg={'gray.100'} py={4} px={8}>
+      <Flex align="center">
+        <Box>
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            <Button
+              colorScheme="teal"
+              variant="ghost"
+              size="lg"
+              fontSize="xl"
+              fontWeight="bold"
+            >
+              RouteSync
+            </Button>
+          </Link>
+        </Box>
+        <Spacer />
+      </Flex>
+    </Box>
+  );
 }
 
-export default Header
+export default Header;
