@@ -14,6 +14,7 @@ import FindRide from "./pages/Rider/FindRide";
 import CancelRide from "./pages/Rider/CancelRide";
 import CreatePool from "./pages/Driver/CreatePool";
 import Profile from "./pages/Shared/Profile";
+import Subscription from "./pages/Driver/Subscription";
 
 function App() {
   const { isAuthenticated } = useAuth0();
@@ -35,6 +36,7 @@ function App() {
               <Route path="/cancel-ride" element={<CancelRide />} exact />
               <Route path="/create-pool" element={<CreatePool />} exact />
               <Route path="/profile" element={<Profile />} exact />
+              <Route path="/subscribe" element={<Subscription />} exact />
             </Routes>
             <Footer />
           </div>

@@ -90,7 +90,7 @@ function DriverHome() {
         </Button>
       </Link>
 
-      <Link to="/subscribe-pool" style={{ textDecoration: 'none' }}>
+      <Link to="/subscribe" style={{ textDecoration: 'none' }}>
         <Button mt={4} colorScheme="teal" size="lg">
           Put your Car/Bike/Cab on subscription
         </Button>
