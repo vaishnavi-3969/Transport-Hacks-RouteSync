@@ -67,13 +67,13 @@ function DriverHome() {
         </GoogleMap>
       </LoadScript>
 
-      <Link to="/driver-profile" style={{ textDecoration: 'none' }}>
+      <Link to="/profile" style={{ textDecoration: 'none' }}>
         <Button mt={6} colorScheme="teal" size="lg">
           View Profile
         </Button>
       </Link>
 
-      <Link to="/notifications" style={{ textDecoration: 'none' }}>
+      <Link to="/rider-notifications" style={{ textDecoration: 'none' }}>
         <Button
           mt={4}
           variant="outline"
@@ -121,7 +121,7 @@ function TripCard({ title, destination, date }) {
         size="sm"
         width="100%"
         as={Link}
-        to="/cancel-trip"
+        to="/cancel-ride"
       >
         Cancel
       </Button>
