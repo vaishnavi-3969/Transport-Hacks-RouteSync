@@ -36,6 +36,7 @@ function App() {
               <Route path="/cancel-ride" element={<CancelRide />} exact />
               <Route path="/create-pool" element={<CreatePool />} exact />
               <Route path="/profile" element={<Profile />} exact />
+              <Route path="/rider-profile" element={<Profile />} exact />
               <Route path="/subscribe" element={<Subscription />} exact />
             </Routes>
             <Footer />
